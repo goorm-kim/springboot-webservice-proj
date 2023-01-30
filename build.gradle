@@ -4,7 +4,7 @@ plugins { // (1)
     id 'java'
 }
 
-group 'com.jojoldu.book'
+group 'com.dnluvletter'
 version '1.0.4-SNAPSHOT-'+new Date().format("yyyyMMddHHmmss")
 sourceCompatibility = 1.8
 
@@ -13,18 +13,22 @@ repositories {
     jcenter()
 }
 
-// for Junit 5
+/* for Junit 5
 test { // (2)
     useJUnitPlatform()
 }
+ */
 
 dependencies {
     //(3)
     implementation('org.springframework.boot:spring-boot-starter-web')
+    testImplementation('org.springframework.boot:spring-boot-starter-test')
     implementation('org.springframework.boot:spring-boot-starter-mustache')
 
     // lombok
     implementation('org.projectlombok:lombok')
+    testImplementation('junit:junit:4.12')
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.8.1'
     annotationProcessor('org.projectlombok:lombok')
     testImplementation('org.projectlombok:lombok')
     testAnnotationProcessor('org.projectlombok:lombok')
